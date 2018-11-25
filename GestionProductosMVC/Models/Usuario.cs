@@ -10,7 +10,7 @@ namespace GestionProductosMVC.Models
     public class Usuario
     {
         //WOW
-        //hola
+        //hola pollo
         [Key]
         public int idUsuario { get; set; }
         [EmailAddress][Required]
