@@ -7,6 +7,7 @@ namespace GestionProductosMVC.Models
 {
     public class DetallePedido
     {
+        public Cliente IdCliente { get; set; }
         public Producto idProducto { get; set; }
         public string Nombre { get; set; }
         public int Precio { get; set; }

@@ -16,6 +16,8 @@ namespace GestionProductosMVC.Models
 
         }
 
+
+
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Empleado> Empleadoes { get; set; }
 
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Cliente> Clientes { get; set; }
