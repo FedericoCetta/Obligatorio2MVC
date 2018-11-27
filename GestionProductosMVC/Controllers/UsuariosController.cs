@@ -28,14 +28,14 @@ namespace GestionProductosMVC.Controllers
 
             if (buscado.Contains(Email))
             {
-                // GUARDAR EL SESSION
+
                 return RedirectToAction("Index", "Empleados");
             }
             var buscado2 = db.Clientes.Where(e => e.Email == Email).Where(e => e.Password == Password).Select(e => e.Email);
             // Otra sintaxis var buscado2 = from e in db.Clientes where e.Email == Email where e.Password == Password select e;
             if (buscado2.Contains(Email))
             {
-                //GUARDAS EL SESSION
+
                 return RedirectToAction("Index", "Clientes");
             }
             
