@@ -7,6 +7,7 @@ namespace GestionProductosMVC.Models
 {
     public class DetallePedido
     {
+        // falta id pedido
         public Producto idProducto { get; set; }
         public string Nombre { get; set; }
         public int Precio { get; set; }
