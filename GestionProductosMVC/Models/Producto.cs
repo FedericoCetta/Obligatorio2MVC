@@ -22,7 +22,8 @@ namespace GestionProductosMVC.Models
         public int Costo { get; set; }
         [Required]
         public int PrecioVenta { get; set; }
-       // public string tipoProducto { get; set; }
+        [Required]
+        public string tipoProducto { get; set; }
 
      
 
