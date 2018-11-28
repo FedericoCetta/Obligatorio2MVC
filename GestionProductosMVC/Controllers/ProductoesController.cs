@@ -44,6 +44,8 @@ namespace GestionProductosMVC.Controllers
         // POST: Productoes/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idProducto,NombreProducto,Descripcion,Costo,PrecioVenta")] Producto producto)

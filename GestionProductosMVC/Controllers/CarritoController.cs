@@ -12,6 +12,8 @@ namespace GestionProductosMVC.Controllers
 {
     public class CarritoController : Controller
     {
+        private MiContextoContext db = new MiContextoContext();
+
         // GET: Carrito
         public ActionResult Index()
         {
@@ -19,10 +21,23 @@ namespace GestionProductosMVC.Controllers
         }
 
         // GET: Carrito/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Carrito orden = db.Carrito.Find(id);
+
+            if (orden == null)
+            {
+                return HttpNotFound();
+            }
+
+            return View(orden);
         }
+
 
         // GET: Carrito/Create
         public ActionResult Create()
@@ -32,62 +47,78 @@ namespace GestionProductosMVC.Controllers
 
         // POST: Carrito/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(Carrito ordendeCompra)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
-
+                db.Carrito.Add(ordendeCompra);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+             return View(ordendeCompra);
+        
         }
 
         // GET: Carrito/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            //busco el id pasado con el find en la base de datos
+
+            Carrito orden = db.Carrito.Find(id);
+
+            if (orden == null)
+            {
+                return HttpNotFound();
+            }
+            return View(orden);
         }
 
         // POST: Carrito/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, Carrito orden)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
+                db.Entry(orden).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(orden);
         }
 
         // GET: Carrito/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
-            return View();
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            //busco id con el find en la base de datos
+            Carrito orden = db.Carrito.Find(id);
+
+            if (orden == null)
+            {
+                return HttpNotFound();
+            }
+            return View(orden);
         }
 
         // POST: Carrito/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            Carrito orden = db.Carrito.Find(id);
+            db.Carrito.Remove(orden);
+            db.SaveChanges();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }
