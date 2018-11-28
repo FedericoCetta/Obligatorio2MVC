@@ -21,5 +21,9 @@ namespace GestionProductosMVC.Models
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Cliente> Clientes { get; set; }
 
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Usuario> Usuarios { get; set; }
+
+        public System.Data.Entity.DbSet<GestionProductosMVC.Models.Login> Logins { get; set; }
+
+        public System.Data.Entity.DbSet<GestionProductosMVC.Models.Producto> Productoes { get; set; }
     }
 }
