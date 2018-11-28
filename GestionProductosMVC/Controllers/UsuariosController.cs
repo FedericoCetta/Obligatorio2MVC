@@ -11,6 +11,7 @@ namespace GestionProductosMVC.Controllers
     {
         private MiContextoContext db = new MiContextoContext();
 
+       
         [HttpGet]
         public ActionResult Login()
         {
@@ -43,9 +44,10 @@ namespace GestionProductosMVC.Controllers
 
                 return RedirectToAction("Index", "Home");
         }
+        
+    
 
-
-
+      
 
 
     }

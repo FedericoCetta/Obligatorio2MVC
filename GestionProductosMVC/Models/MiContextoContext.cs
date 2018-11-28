@@ -1,8 +1,9 @@
-﻿using System;
+﻿//-using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System;
 
 namespace GestionProductosMVC.Models
 {
@@ -16,6 +17,8 @@ namespace GestionProductosMVC.Models
 
         }
 
+       
+       
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Empleado> Empleadoes { get; set; }
 
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Cliente> Clientes { get; set; }
