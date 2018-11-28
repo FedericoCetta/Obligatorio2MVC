@@ -1,4 +1,4 @@
-﻿@model GestionProductosMVC.Models.Cliente
+﻿@model GestionProductosWCF.Models.Cliente
 
 @{
     ViewBag.Title = "Details";
@@ -10,6 +10,14 @@
     <h4>Cliente</h4>
     <hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.Email)
         </dt>
@@ -24,14 +32,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.Password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Nombre)
         </dd>
 
     </dl>
