@@ -9,6 +9,8 @@ namespace GestionProductosMVC.Models
     public class Carrito
     {
         [Key]
+        public int idSolicitud { get; set; }
+        [Required]
         public Usuario idCliente { get; set; }
         [Required]
         public Producto idProducto { get; set; }

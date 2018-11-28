@@ -28,5 +28,7 @@ namespace GestionProductosMVC.Models
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Login> Logins { get; set; }
 
         public System.Data.Entity.DbSet<GestionProductosMVC.Models.Producto> Productoes { get; set; }
+
+        public System.Data.Entity.DbSet<GestionProductosMVC.Models.Carrito> Carrito { get; set; }
     }
 }
